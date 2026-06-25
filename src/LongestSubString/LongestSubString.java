@@ -17,7 +17,6 @@ class Solution {
         return longest;
     }
 }
-
 public class LongestSubString{
     public static void main(String[] args){
             String s = "abcabcbb";
