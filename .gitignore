@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
@@ -29,3 +30,8 @@ bin/
 .DS_Store
 
 .idea/
+=======
+.idea
+
+**.class
+>>>>>>> d9fdab6767256e3ab1e65b80a08c29014f112da8
