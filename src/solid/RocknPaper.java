@@ -1,3 +1,5 @@
+package solid;
+
 import java.util.Random;
 public class RocknPaper {
 
