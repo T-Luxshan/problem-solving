@@ -5,7 +5,7 @@ import solid.Gesture;
 public class Rock implements Gesture {
 
     @Override
-    public String getName() {
-        return "Rock";
+    public GestureType getType() {
+        return GestureType.ROCK;
     }
 }
