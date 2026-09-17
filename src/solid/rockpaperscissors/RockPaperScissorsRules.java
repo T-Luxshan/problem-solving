@@ -6,20 +6,32 @@ import solid.Gesture;
 
 public class RockPaperScissorsRules implements GameRules {
     @Override
-    public GameResult determineWinner(Gesture humanGesture, Gesture computerGesture) {
-        if(humanGesture.equals(computerGesture)){
+    public GameResult determineWinner(
+            Gesture humanGesture,
+            Gesture computerGesture) {
+
+        if (humanGesture.getType() == computerGesture.getType()) {
             return GameResult.DRAW;
         }
-        if(humanGesture.getType().equals((new Rock()).getType())){
-            return computerGesture.equals(new Paper()) ? GameResult.COMPUTER_WIN : GameResult.HUMAN_WIN;
-        }
-        if(humanGesture.getType().equals(new Paper().getType())){
-            return computerGesture.equals(new Scissors()) ? GameResult.COMPUTER_WIN : GameResult.HUMAN_WIN;
-        }
-        if(humanGesture.getType().equals(new Scissors().getType())){
-            return computerGesture.equals(new Rock()) ? GameResult.COMPUTER_WIN : GameResult.HUMAN_WIN;
+
+        if (humanGesture.getType() == GestureType.ROCK) {
+            return computerGesture.getType() == GestureType.PAPER
+                    ? GameResult.COMPUTER_WIN
+                    : GameResult.HUMAN_WIN;
         }
 
-        return null;
+        if (humanGesture.getType() == GestureType.PAPER) {
+            return computerGesture.getType() == GestureType.SCISSORS
+                    ? GameResult.COMPUTER_WIN
+                    : GameResult.HUMAN_WIN;
+        }
+
+        if (humanGesture.getType() == GestureType.SCISSORS) {
+            return computerGesture.getType() == GestureType.ROCK
+                    ? GameResult.COMPUTER_WIN
+                    : GameResult.HUMAN_WIN;
+        }
+
+        throw new IllegalArgumentException("Unsupported gesture");
     }
 }
