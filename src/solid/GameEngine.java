@@ -10,4 +10,15 @@ public class GameEngine {
         this.computerPlayer = computerPlayer;
         this.gameRules = gameRules;
     }
+    public GameResult playRound() {
+
+        Gesture humanGesture = humanPlayer.chooseGesture();
+
+        Gesture computerGesture = computerPlayer.chooseGesture();
+
+        return gameRules.determineWinner(
+                humanGesture,
+                computerGesture
+        );
+    }
 }
