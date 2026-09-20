@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args){
         GestureProvider gestureProvider = new RockPaperScissorsGestureProvider();
 
-        Player humanPlayer = new HumanPlayer();
+        Player humanPlayer = new HumanPlayer(gestureProvider);
 
         Player computerPlayer = new ComputerPlayer(gestureProvider);
 
@@ -18,9 +18,9 @@ public class Main {
         GameEngine gameEngine = new GameEngine(humanPlayer, computerPlayer, gameRules);
 
         // 5. Play one round
-//        GameResult result = gameEngine.playRound();
+        GameResult result = gameEngine.playRound();
 
         // 6. Display the result
-//        System.out.println("Result: " + result);
+        System.out.println("Result: " + result);
     }
 }
