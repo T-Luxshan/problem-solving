@@ -6,6 +6,6 @@ public class Sword implements Gesture {
 
     @Override
     public String getType() {
-        return null;
+        return "SWORD";
     }
 }
