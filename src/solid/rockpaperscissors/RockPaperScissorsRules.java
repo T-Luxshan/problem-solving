@@ -4,6 +4,8 @@ import solid.GameResult;
 import solid.GameRules;
 import solid.Gesture;
 
+import java.util.Objects;
+
 public class RockPaperScissorsRules implements GameRules {
     @Override
     public GameResult determineWinner(
@@ -14,20 +16,20 @@ public class RockPaperScissorsRules implements GameRules {
             return GameResult.DRAW;
         }
 
-        if (humanGesture.getType() == GestureType.ROCK) {
-            return computerGesture.getType() == GestureType.PAPER
+        if (Objects.equals(humanGesture.getType(), "ROCK")) {
+            return Objects.equals(computerGesture.getType(), "PAPER")
                     ? GameResult.COMPUTER_WIN
                     : GameResult.HUMAN_WIN;
         }
 
-        if (humanGesture.getType() == GestureType.PAPER) {
-            return computerGesture.getType() == GestureType.SCISSORS
+        if (Objects.equals(humanGesture.getType(), "PAPER")) {
+            return Objects.equals(computerGesture.getType(), "SCISSORS")
                     ? GameResult.COMPUTER_WIN
                     : GameResult.HUMAN_WIN;
         }
 
-        if (humanGesture.getType() == GestureType.SCISSORS) {
-            return computerGesture.getType() == GestureType.ROCK
+        if (Objects.equals(humanGesture.getType(), "SCISSORS")) {
+            return Objects.equals(computerGesture.getType(), "ROCK")
                     ? GameResult.COMPUTER_WIN
                     : GameResult.HUMAN_WIN;
         }
