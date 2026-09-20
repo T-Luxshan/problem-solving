@@ -4,7 +4,7 @@ import solid.Gesture;
 
 public class Paper implements Gesture {
     @Override
-    public GestureType getType() {
-        return GestureType.PAPER;
+    public String getType() {
+        return "PAPER";
     }
 }
