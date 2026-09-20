@@ -23,7 +23,6 @@ public class HumanPlayer implements Player{
             System.out.print("Invalid input try again:");
             choice = sc.nextInt();
         }
-
         return gestures.get(choice-1);
     }
 
