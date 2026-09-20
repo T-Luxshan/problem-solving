@@ -12,7 +12,7 @@ public class RockPaperScissorsRules implements GameRules {
             Gesture humanGesture,
             Gesture computerGesture) {
 
-        if (humanGesture.getType() == computerGesture.getType()) {
+        if (Objects.equals(humanGesture.getType(), computerGesture.getType())) {
             return GameResult.DRAW;
         }
 
